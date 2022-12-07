@@ -1,7 +1,7 @@
 function validatePassword(){
     var pswd = document.getElementById("pass1").value;
  if(pswd =="kakor"){
-window.location.replace ="home.html";
+window.location.replace ="http://www.granath.top/home";
 return true;
 }
 else
