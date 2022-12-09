@@ -1,10 +1,9 @@
 function validatePassword(){
-    var pswd = document.getElementById("pass1").value;
+    const url = "https://www.granath.top/home/"
+    let pswd = document.getElementById("pass1").value;
  if(pswd =="kakor"){
-window.location.replace ="http://www.granath.top/home";
-return true;
+window.location.href =url;
 }
 else
 alert("wtf")
-return false;
 }
