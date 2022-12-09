@@ -1,5 +1,5 @@
 function validatePassword(){
-    const url = "https://www.granath.top/home/"
+    const url = "/home/"
     let pswd = document.getElementById("pass1").value;
  if(pswd =="kakor"){
 window.location.href =url;
