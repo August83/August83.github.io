@@ -1,9 +1,17 @@
-function validatePassword(){
-    const url = "/home/"
-    let pswd = document.getElementById("pass1").value;
- if(pswd =="kakor"){
-window.location.href =url;
+function redirectToPage(page) {
+    const currentUrl = window.location.href; 
+    const url = currentUrl + page; 
+    window.location.assign(url); 
 }
-else
-alert("wtf")
+
+//
+
+function validatePassword(){
+    let pswd = document.getElementById("pass1").value
+    if(pswd=="kakor"){
+        redirectToPage("/home.html")
+    }
+    else{
+        alert("wtf")
+    }
 }
