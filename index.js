@@ -15,7 +15,7 @@ function validatePassword() {
         var pswd = pswdElement.value;
         var password = '123';
         if (pswd === password) {
-            redirectToPage('/home.html');
+            redirectToPage('home');
         } else {
             alert('no');
         }
