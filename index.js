@@ -1,17 +1,23 @@
 function redirectToPage(page) {
-    const currentUrl = window.location.href; 
-    const url = currentUrl + page; 
+    var currentUrl = window.location.href; 
+    if (currentUrl.slice(-1) !== '/') {
+        currentUrl += '/';
+    }
+    var url = currentUrl + page; 
     window.location.assign(url); 
 }
 
 //
 
-function validatePassword(){
-    let pswd = document.getElementById("pass1").value
-    if(pswd=="kakor"){
-        redirectToPage("/home.html")
-    }
-    else{
-        alert("wtf")
+function validatePassword() {
+    var pswdElement = document.getElementById('pass1');
+    if (pswdElement) {
+        var pswd = pswdElement.value;
+        var password = '123';
+        if (pswd === password) {
+            redirectToPage('/home.html');
+        } else {
+            alert('no');
+        }
     }
 }
