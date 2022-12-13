@@ -7,9 +7,27 @@
   <title> granath </title>
 <link rel="stylesheet" href="style.css">
 
-<script src="index.js"></script>
-</head>
+<script>
+  function redirectToPage(page) {
+    const currentUrl = window.location.href; 
+    const url = currentUrl + page; 
+    window.location.assign(url); 
+}
 
+//
+
+function validatePassword(){
+    let pswd = document.getElementById("pass1").value
+    if(pswd=="kakor"){
+        redirectToPage("/home.html")
+    }
+    else{
+        alert("wtf")
+    }
+}
+
+</script>
+</head>
 
 <body>
   <header>
@@ -30,7 +48,7 @@
 
 <form class="input-box" onsubmit="validatePassword()">
   <input type="password" placeholder="Lösenord" id="pass1">
-  <input type="submit" value="Submit"></button>
+  <input type="submit"></button>
 
 
 </form> 
