@@ -9,6 +9,8 @@
 
 function redirectToPage(url) {
     window.location.assign(url); 
+    event.preventDefault();
+
 }
 
 function validatePassword() {
