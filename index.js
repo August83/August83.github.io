@@ -13,7 +13,7 @@ function redirectToPage(url) {
 
 }
 
-function validatePassword() {
+function validatePassword(event) {
     var pswdElement = document.getElementById('pass1');
     if (pswdElement) {
         var pswd = pswdElement.value;
