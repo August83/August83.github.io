@@ -20,6 +20,7 @@ function validatePassword() {
             redirectToPage('https://www.granath.top/home');
         } else {
             alert('no');
+            event.preventDefault();
         }
     }
 }
