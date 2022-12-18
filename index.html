@@ -4,30 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> granath </title>
+  <title> Granath </title>
 <link rel="stylesheet" href="style.css">
 
-<script>
-  function redirectToPage(page) {
-    const currentUrl = window.location.href; 
-    const url = currentUrl + page; 
-    window.location.assign(url); 
-}
-
-//
-
-function validatePassword(){
-    let pswd = document.getElementById("pass1").value
-    if(pswd=="kakor"){
-        redirectToPage("/home.html")
-    }
-    else{
-        alert("wtf")
-    }
-}
-
-</script>
+<script src="index.js"></script>
 </head>
+
 
 <body>
   <header>
@@ -48,7 +30,7 @@ function validatePassword(){
 
 <form class="input-box" onsubmit="validatePassword()">
   <input type="password" placeholder="Lösenord" id="pass1">
-  <input type="submit"></button>
+  <input type="submit" value="Submit"></button>
 
 
 </form> 
