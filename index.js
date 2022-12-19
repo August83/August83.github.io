@@ -1,12 +1,4 @@
-//function redirectToPage(page) {
-    //var currentUrl = window.location.href; 
-   // if (currentUrl.slice(-1) !== '/') {
-   //     currentUrl += '/';
-  //  }
-  //  var url = currentUrl + page; 
- //   window.location.assign(url); 
-//}
-
+"use strict"
 function redirectToPage(url, event) {
     window.location.assign(url); 
     event.preventDefault();
