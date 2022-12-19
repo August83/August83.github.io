@@ -7,7 +7,7 @@
  //   window.location.assign(url); 
 //}
 
-function redirectToPage(url) {
+function redirectToPage(url, event) {
     window.location.assign(url); 
     event.preventDefault();
 
@@ -19,10 +19,10 @@ function validatePassword(event) {
         var pswd = pswdElement.value;
         var password = '123';
         if (pswd === password) {
-            redirectToPage('https://www.granath.top/home');
+            redirectToPage('home.html', event);
         } else {
-            alert('no');
-            event.preventDefault();
+        window.location.reload();
+        event.preventDefault();
         }
     }
 }
