@@ -6,15 +6,20 @@ body {
     margin: 0;
 }
 :root {
-    --cell-size: 100px;
+    --cell-size: max(15vh, 70px);
     --mark-size: calc(var(--cell-size) * 0.9);
 }
-
+.textDiv {
+margin-top: 5vh;
+margin-bottom:1vh;
+font-family: 'telegrama';
+text-align: center;
+color:CadetBlue;
+font-size: max(5vh, 20px);
+}
 /*  BOARD    -------------------------------------------------------------*/
 
 .board{
-    width: 100vw;
-    height: 100vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -54,6 +59,9 @@ body {
 
 .cell:not(.o):not(.x) {
     cursor: pointer;
+}
+.game-ended .cell:not(.o):not(.x) {
+    cursor: default;
 }
 
 .board.x .cell:not(.x):not(.o):hover::before,
@@ -133,15 +141,19 @@ body {
     margin-right: auto;
 }
 .restarting{
-    margin-top: 50px;
+    margin-top: 5vh;
     text-align: center;
 }
 .restarting button{
     text-align: center;
     border: none;
-    border-radius: 20px;
-    background-color: CadetBlue;
-    padding: 15px;
+    border-radius: 30px;
+    background-color: #5f9ea0;
+    padding: min(2.5vh, 20px);
     font-family: 'telegrama';
-    color: White;
+    color: Black;
+    cursor: pointer;
+}
+.restarting button:hover {
+    background-color: #39696b;
 }
