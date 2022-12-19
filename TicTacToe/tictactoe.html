@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../style.css">
     <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 
   </head>
@@ -13,10 +13,9 @@
   <body>
     <section class="titleDiv">
         <h1>Tre i rad</h1> 
+        <p id="turnText">Spelare: x</p>
     </section>
-    <div class="board" id="board">
-    <div class="cell" data-cell>x</div>
-    <div class="cell" data-cell>o</div>
+    <article class="board" id="board">
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
@@ -24,9 +23,10 @@
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
-    </div>
-    <div class="endgame">
-        <div class="endgameText"></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    </article>
+    <div class="restarting">
     <button onclick="startgame()">Replay</button>
     </div>
   </body>

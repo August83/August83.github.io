@@ -1,4 +1,4 @@
-@font-face { font-family: telegrama; src: url('telegren.ttf'); } 
+@font-face { font-family: telegrama; src: url('../telegren.ttf'); } 
 *, *::after, *::before {
     box-sizing: border-box;
 }
@@ -7,8 +7,11 @@ body {
 }
 :root {
     --cell-size: 100px;
-    --mark-size: cal(var(--cell-size) * 0.9);
+    --mark-size: calc(var(--cell-size) * 0.9);
 }
+
+/*  BOARD    -------------------------------------------------------------*/
+
 .board{
     width: 100vw;
     height: 100vh;
@@ -27,7 +30,9 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    position: relative;
 }
+
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
@@ -45,17 +50,93 @@ body {
     border-bottom: none;
 }
 
+/* HOVER ------------------------------------------------------------------*/
 
+.cell:not(.o):not(.x) {
+    cursor: pointer;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--mark-size)* 0.15);
+    height: var(--mark-size);
+    background-color: rgb(25, 25, 25);
+}
+.board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+.board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before ,
+.board.o .cell:not(.x):not(.o):hover::after{
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: rgb(25, 25, 25);
+}
+.board.o .cell:not(.x):not(.o):hover::after{
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: #2b2b2b;
+}
+
+/*  MARKERS  --------------------------------------------------------------*/
+
+.cell.x::before,
+.cell.x::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--mark-size)* 0.15);
+    height: var(--mark-size);
+    background-color: black;
+}
+.cell.x::before {
+    transform: rotate(45deg);
+}
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+.cell.o::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black;
+}
+.cell.o::after {
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: #2b2b2b;
+}
+
+
+
+/*  RESTART  ------------------------------------------------------------*/
 
 .center{
-margin-left: auto;
-margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
-.endgame{
+.restarting{
     margin-top: 50px;
     text-align: center;
 }
-.endgame button{
+.restarting button{
     text-align: center;
     border: none;
     border-radius: 20px;
