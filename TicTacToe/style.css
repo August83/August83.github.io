@@ -1,0 +1,66 @@
+@font-face { font-family: telegrama; src: url('telegren.ttf'); } 
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+:root {
+    --cell-size: 100px;
+    --mark-size: cal(var(--cell-size) * 0.9);
+}
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: transparent;
+    border: 2px solid Black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+
+
+.center{
+margin-left: auto;
+margin-right: auto;
+}
+.endgame{
+    margin-top: 50px;
+    text-align: center;
+}
+.endgame button{
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    background-color: CadetBlue;
+    padding: 15px;
+    font-family: 'telegrama';
+    color: White;
+}
