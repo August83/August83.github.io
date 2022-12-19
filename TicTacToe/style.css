@@ -89,7 +89,7 @@ font-size: max(5vh, 20px);
 .board.o .cell:not(.x):not(.o):hover::before {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(73, 73, 73);
 }
 .board.o .cell:not(.x):not(.o):hover::after{
     width: calc(var(--mark-size) * 0.7);
@@ -124,7 +124,7 @@ font-size: max(5vh, 20px);
 .cell.o::before {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: black;
+    background-color: rgb(168, 168, 168);
 }
 .cell.o::after {
     width: calc(var(--mark-size) * 0.7);
