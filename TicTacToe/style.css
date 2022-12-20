@@ -153,10 +153,11 @@ font-size: max(5vh, 20px);
     font-family: 'telegrama';
     color: Black;
     cursor: pointer;
+    font-size: max(3vh, 5px);
 }
 @media only screen and (max-width: 600px) {
     .restarting button{
-        padding: clamp(30px, 20vh, 40px)
+        padding: clamp(10px, 5vh, 20px)
     }
 }
 .restarting button:hover {
