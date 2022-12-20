@@ -1,35 +1,164 @@
-@font-face { font-family: telegrama; src: url('telegren.ttf'); } 
-body { 
-background-size: cover;
-background-color:#2b2b2b; 
+@font-face { font-family: telegrama; src: url('../telegren.ttf'); } 
+*, *::after, *::before {
+    box-sizing: border-box;
 }
-.titleDiv {
-margin-top: 30vh;
-margin-bottom: 10vh;
+body {
+    margin: 0;
+}
+:root {
+    --cell-size: max(15vh, 70px);
+    --mark-size: calc(var(--cell-size) * 0.9);
+}
+.textDiv {
+margin-top: 5vh;
+margin-bottom:1vh;
 font-family: 'telegrama';
 text-align: center;
 color:CadetBlue;
-font-size: clamp(10px, 10vh, 50px);
+font-size: max(5vh, 20px);
 }
-.input-box{
-    margin: 31px auto;
+/*  BOARD    -------------------------------------------------------------*/
+
+.board{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: transparent;
+    border: 2px solid Black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+/* HOVER ------------------------------------------------------------------*/
+
+.cell:not(.o):not(.x) {
+    cursor: pointer;
+}
+.game-ended .cell:not(.o):not(.x) {
+    cursor: default;
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--mark-size)* 0.15);
+    height: var(--mark-size);
+    background-color: rgb(25, 25, 25);
+}
+.board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+.board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before ,
+.board.o .cell:not(.x):not(.o):hover::after{
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: rgb(73, 73, 73);
+}
+.board.o .cell:not(.x):not(.o):hover::after{
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: #2b2b2b;
+}
+
+/*  MARKERS  --------------------------------------------------------------*/
+
+.cell.x::before,
+.cell.x::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--mark-size)* 0.15);
+    height: var(--mark-size);
+    background-color: black;
+}
+.cell.x::before {
+    transform: rotate(45deg);
+}
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+}
+
+.cell.o::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: rgb(168, 168, 168);
+}
+.cell.o::after {
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: #2b2b2b;
+}
+
+
+
+/*  RESTART  ------------------------------------------------------------*/
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.restarting{
+    margin-top: 5vh;
     text-align: center;
-    width: 280px;
-    border-bottom: 1px solid #fff;
-    padding-top: 10px;
-    padding-bottom: 5px;
 }
-.input-box input{
-font-family: 'telegrama';
-width: 75%;
-border: none;
-outline: none;
-background: transparent;
-color: #fff;
-}
-::placeholder{
-    color: rgb(172, 172, 172)
-}
-.input-box button{
+.restarting button{
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color: #5f9ea0;
+    padding: clamp(12px, 2.5vh, 25px);
     font-family: 'telegrama';
+    color: Black;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1000px) {
+    .restarting button{
+        padding: clamp(30px, 20vw, 40px)
+    }
+}
+.restarting button:hover {
+    background-color: #39696b;
 }
