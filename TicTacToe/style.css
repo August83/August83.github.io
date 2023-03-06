@@ -10,52 +10,51 @@ body {
     --mark-size: calc(var(--cell-size) * 0.9);
 }
 .textDiv {
-margin-top: 5vh;
-margin-bottom:1vh;
+margin-top: 12vh;
 font-family: 'telegrama';
 text-align: center;
 color:CadetBlue;
-font-size: max(5vh, 20px);
+font-size: max(4vh, 20px);
 }
-/*  BOARD    -------------------------------------------------------------*/
+/* #region <BOARD>    -------------------------------------------------------------*/
 
-.board{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3,auto);
-}
-.cell{
-    width: var(--cell-size);
-    height: var(--cell-size);
-    background-color: transparent;
-    border: 2px solid Black;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: relative;
-}
+    #board{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(3,auto);
+    }
+    .cell{
+        width: var(--cell-size);
+        height: var(--cell-size);
+        background-color: transparent;
+        border: 2px solid Black;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+    }
 
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
-    border-top: none;
-}
-.cell:nth-child(3n+1) {
-    border-left: none;
-}
-.cell:nth-child(3n+3) {
-    border-right: none;
-}
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7) {
-    border-bottom: none;
-}
-
-/* HOVER ------------------------------------------------------------------*/
+    .cell:first-child,
+    .cell:nth-child(2),
+    .cell:nth-child(3) {
+        border-top: none;
+    }
+    .cell:nth-child(3n+1) {
+        border-left: none;
+    }
+    .cell:nth-child(3n+3) {
+        border-right: none;
+    }
+    .cell:last-child,
+    .cell:nth-child(8),
+    .cell:nth-child(7) {
+        border-bottom: none;
+    }
+/* #endregion */
+/* #region <HOVER> ------------------------------------------------------------------*/
 
 .cell:not(.o):not(.x) {
     cursor: pointer;
@@ -64,40 +63,40 @@ font-size: max(5vh, 20px);
     cursor: default;
 }
 
-.board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after {
+#board.x .cell:not(.x):not(.o):hover::before,
+#board.x .cell:not(.x):not(.o):hover::after {
     position: absolute;
     content: "";
     width: calc(var(--mark-size)* 0.15);
     height: var(--mark-size);
     background-color: rgb(25, 25, 25);
 }
-.board.x .cell:not(.x):not(.o):hover::before {
+#board.x .cell:not(.x):not(.o):hover::before {
     transform: rotate(45deg);
 }
-.board.x .cell:not(.x):not(.o):hover::after {
+#board.x .cell:not(.x):not(.o):hover::after {
     transform: rotate(-45deg);
 }
 
-.board.o .cell:not(.x):not(.o):hover::before ,
-.board.o .cell:not(.x):not(.o):hover::after{
+#board.o .cell:not(.x):not(.o):hover::before ,
+#board.o .cell:not(.x):not(.o):hover::after{
     position: absolute;
     content: "";
     border-radius: 50%;
 }
 
-.board.o .cell:not(.x):not(.o):hover::before {
+#board.o .cell:not(.x):not(.o):hover::before {
     width: var(--mark-size);
     height: var(--mark-size);
     background-color: rgb(73, 73, 73);
 }
-.board.o .cell:not(.x):not(.o):hover::after{
+#board.o .cell:not(.x):not(.o):hover::after{
     width: calc(var(--mark-size) * 0.7);
     height: calc(var(--mark-size) * 0.7);
     background-color: #2b2b2b;
 }
-
-/*  MARKERS  --------------------------------------------------------------*/
+/* #endregion */
+/* #region <MARKERS>  --------------------------------------------------------------*/
 
 .cell.x::before,
 .cell.x::after {
@@ -133,18 +132,18 @@ font-size: max(5vh, 20px);
 }
 
 
-
-/*  RESTART  ------------------------------------------------------------*/
+/* #endregion */
+/* #region <RESTART>  ------------------------------------------------------------*/
 
 .center{
     margin-left: auto;
     margin-right: auto;
 }
-.restarting{
-    margin-top: 5vh;
+#restarting{
+    margin-top: 2vh;
     text-align: center;
 }
-.restarting button{
+#restarting button{
     text-align: center;
     border: none;
     border-radius: 30px;
@@ -153,13 +152,14 @@ font-size: max(5vh, 20px);
     font-family: 'telegrama';
     color: Black;
     cursor: pointer;
-    font-size: max(3vh, 5px);
+    font-size: max(2vh, 5px);
 }
-@media only screen and (max-width: 600px) {
-    .restarting button{
+@media only screen and not (min-width: 1080) and (orientation: landscape) {
+    #restarting button{
         padding: clamp(10px, 5vh, 20px)
     }
 }
-.restarting button:hover {
+#restarting button:hover {
     background-color: #39696b;
 }
+/* #endregion */

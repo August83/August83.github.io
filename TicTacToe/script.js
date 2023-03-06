@@ -7,6 +7,8 @@ const turnText = document.querySelector("#turnText");
 let toggle = true;
 const restartButton = document.getElementById("restartButton")
 let gameEnded = false
+let oScore = 0;
+let xScore = 0;
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -60,6 +62,12 @@ function endGame(draw) {
         turnText.textContent = "Oavgjort!"
     } else {
         turnText.textContent = `${oTurn ? "Spelare o vann!" : "Spelare x vann!"}`
+       if (oTurn){
+        oScore++;
+       }
+       else {
+        xScore++;
+       }
     }
     setBoardHoverClass()
 }
