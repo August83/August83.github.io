@@ -2,15 +2,18 @@
 body { 
 background-size: cover;
 background-color:#2b2b2b; 
+font-family: 'telegrama';
 }
 .titleDiv {
 margin-top: 30vh;
-margin-bottom: 10vh;
-font-family: 'telegrama';
+margin-bottom: 5vh;
 text-align: center;
 color:CadetBlue;
-font-size: clamp(10px, 10vh, 50px);
+font-size: clamp(10px, 10vh, 40px);
 }
+
+/* Index password form */
+
 .input-box{
     margin: 31px auto;
     text-align: center;
@@ -32,4 +35,65 @@ color: #fff;
 }
 .input-box button{
     font-family: 'telegrama';
+}
+
+/* Header */
+
+
+nav ul {
+	list-style-type:none;
+    display: flex;
+	float: none;
+	position: absolute;
+	top: 3vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-top: 2px solid CadetBlue;
+	padding: 0 5vh 0;
+	margin-top: 2.5vh;
+}
+nav ul li {
+	padding: 3vh;
+}
+nav a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: cadetblue;
+}
+nav .active {
+	padding-bottom: 7px;
+	border-bottom: 2px solid cadetblue;
+}
+nav a:active, a:hover {
+	filter:brightness(200%);
+	padding-bottom: 7px;
+	border-bottom: 2px solid rgba(57, 115, 203, 0.854);
+}
+
+/* Page 2 webbutveckling */
+
+#mainArea {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #0F9;
+	color: CadetBlue;
+}
+#headArea {
+	border: 1px solid #FC6;
+}
+#menuArea {
+	width: 150px;
+	border: 1px solid #96C;
+	float: left;
+}
+#infoArea {
+	width: 500px;
+	border: 1px solid #F00;
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.clearBox {
+	clear: both;
+	float: right;
 }
