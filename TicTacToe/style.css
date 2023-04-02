@@ -25,7 +25,8 @@ font-size: max(4vh, 20px);
         justify-items: center;
         align-items: center;
         grid-template-columns: repeat(3,auto);
-    }
+        width: 33.33%;
+        }
     .cell{
         width: var(--cell-size);
         height: var(--cell-size);
@@ -162,4 +163,30 @@ font-size: max(4vh, 20px);
 #restarting button:hover {
     background-color: #39696b;
 }
+/* #endregion */
+/* #region <SCOREBOARD> */
+#rowContainer {
+    display: flex;
+}
+#archive {
+    width: 33.33%;
+}
+#scoreboard {
+    display: flex;
+    width: 33.33%;
+    justify-content:center;
+    color: cadetblue;
+}
+#scoreboard th, td {
+    padding: 10px;
+    font-size: 1.2em;
+}
+#scoreboard td {
+    padding-left: 50px;
+    color: white;
+}
+
+
+
+
 /* #endregion */

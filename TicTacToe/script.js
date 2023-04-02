@@ -3,12 +3,17 @@ const oClass = "o"
 const cellElements = document.querySelectorAll("[data-cell]")
 const board = document.getElementById("board")
 let oTurn
-const turnText = document.querySelector("#turnText");
+let startingPlayer = "o"
+const turnText = document.querySelector("#turnText")
+const oPoints = document.querySelector("#oPoints")
+const xPoints = document.querySelector("#xPoints")
+const tiePoints = document.querySelector("#tiePoints")
 let toggle = true;
 const restartButton = document.getElementById("restartButton")
 let gameEnded = false
 let oScore = 0;
 let xScore = 0;
+let tieScore = 0;
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -27,7 +32,7 @@ restartButton.addEventListener("click", startGame)
 
 function startGame() {
     gameEnded = false
-    oTurn = false
+    oTurn = startingPlayer === "o"
     cellElements.forEach(cell => {
         cell.classList.remove(xClass)
         cell.classList.remove(oClass)
@@ -36,6 +41,7 @@ function startGame() {
 })
     swapTurns()
     setBoardHoverClass()
+    startingPlayer = startingPlayer === "o" ? "x" : "o"
 }
 
 function handleClick(event) {
@@ -59,14 +65,19 @@ function handleClick(event) {
 function endGame(draw) {
     gameEnded = true
     if (draw) {
+        tieScore++
+        tiePoints.textContent = tieScore
         turnText.textContent = "Oavgjort!"
     } else {
         turnText.textContent = `${oTurn ? "Spelare o vann!" : "Spelare x vann!"}`
        if (oTurn){
-        oScore++;
+        oScore++
+        oPoints.textContent = oScore
+        
        }
        else {
         xScore++;
+        xPoints.textContent = xScore
        }
     }
     setBoardHoverClass()

@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	background-color: #2b2b2b;
+	color: #FFF;
+}
+#mainArea {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #F00;
+}
+#headArea {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.3em;
+	border: 1px solid #0F0;
+}
+#menuArea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	float: left;
+	width: 150px;
+	border: 1px solid #00F;
+}
+#infoArea {
+	float: right;
+	width: 700px;
+	border: 1px solid #FF0;
+	padding-left: 5px;
+}
+.clearBox {
+	clear: both;
+}
+.sidebarBox {
+	width: 200px;
+	border: 1px solid #F0F;
+	float: right;
+	font-size: 0.9em;
+	background-color: #666;
+	padding-left: 5px;
+	margin-left: 5px;
+}
+#menuArea p a {
+	color: #FFF;
+	text-decoration: none;
+	padding-bottom: 5px;
+	padding-left: 3px;
+}
+#menuArea p a:hover {
+	border-bottom: 1px solid blue;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: cadetblue;
+}

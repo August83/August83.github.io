@@ -39,7 +39,6 @@ color: #fff;
 
 /* Header */
 
-
 nav ul {
 	list-style-type:none;
     display: flex;
@@ -50,10 +49,9 @@ nav ul {
 	transform: translate(-50%, -50%);
 	border-top: 2px solid CadetBlue;
 	padding: 0 5vh 0;
-	margin-top: 2.5vh;
 }
 nav ul li {
-	padding: 3vh;
+	padding: 2vh 3vh 0;
 }
 nav a:link, a:visited, a:hover, a:active {
 	text-decoration: none;

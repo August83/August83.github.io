@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #3F6;
+}
+#headArea {
+	font-size: 20px;
+	border: 1px solid #3CC;
+	background-color: yellow;
+	}
+#menuArea {
+	border: 1px solid #CF3;
+	font-weight: bold;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+#infoArea {
+	border: 1px solid #FF0;
+	width: auto;
+}
+#mainArea {
+	background-color: #36F;
+	width: 750px;
+	border: 1px solid #000;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: cadetblue;
+}

@@ -1,0 +1,29 @@
+#mainArea {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #0F9;
+}
+#headArea {
+	border: 1px solid #FC6;
+}
+#menuArea {
+	width: 150px;
+	border: 1px solid #96C;
+	float: left;
+}
+#infoArea {
+	width: 500px;
+	border: 1px solid #F00;
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.clearBox {
+	clear: both;
+	float: right;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: cadetblue;
+}

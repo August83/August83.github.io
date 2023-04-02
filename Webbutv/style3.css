@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mainArea {
+	width: 960px;
+	border: 1px solid #C33;
+}
+#headArea {
+	width: auto;
+	border: 1px solid #0F0;
+}
+#menuArea {
+	width: 150px;
+	border: 1px solid #06C;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#newsArea {
+	width: 200px;
+	border: 1px solid #0FF;
+	float: right;
+}
+#infoArea {
+	border: 1px solid #FF3;
+	width: 500px;
+	float: left;
+	margin-left: 15px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.clearBox {
+	clear: both;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #FCF;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: cadetblue;
+}

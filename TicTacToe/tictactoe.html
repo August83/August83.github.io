@@ -26,33 +26,34 @@
       <h1>Tre i rad</h1> 
       <p id="turnText">Spelare: x</p>
     </section>
-    <article id="board">
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-    </article>
+    <div id="rowContainer">
+      <table id="scoreboard">
+        <tr>
+          <th id="oStats">Spelare o</th>
+          <th id="tieStats">Oavgjort</th>
+          <th id="xStats">Spelare x</th>
+        </tr>
+        <tr>
+          <td id="oPoints">0</td>
+          <td id="tiePoints">0</td>
+          <td id="xPoints">0</td>
+        </tr>
+      </table>
+      <article id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </article>
+      <div id="archive"></div>
+    </div>
     <div id="restarting">
       <button onclick="startGame()">Starta om</button>
-    </div>
-    <div id="scoreboard">
-      <div id="oStats">
-        <p>Spelare o</p>
-        <p id="oPoints">0</p>
-      </div>
-      <div id="tieStats">
-        <p>Oavgjort</p>
-        <p id="tiePoints">0</p>
-      </div>
-      <div id="xStats">
-        <p>Spelare x</p>
-        <p id="xPoints">0</p>
-      </div>
     </div>
   </main>
 </body>
