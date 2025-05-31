@@ -6,11 +6,81 @@ let newExerciseToAdd = "";
 let logs = JSON.parse(localStorage.getItem("trainingLogs")) || [];
 
 let exerciseCategories = JSON.parse(localStorage.getItem("exerciseCategories")) || {
-  "Push": ["Bänkpress", "Axelpress", "Dips"],
-  "Pull": ["Chins", "Rodd", "Latsdrag"],
-  "Legs": ["Knäböj", "Marklyft", "Hip thrust"],
-  "Övrigt": ["Situps", "Plankan"]
+  "Push": [
+    "Incline press",
+    "Bench",
+    "Incline bench",
+    "Incline dumbbell",
+    "Shoulder dumbbell",
+    "Cable lateral raise",
+    "Dumbbell lateral raise",
+    "Cuffed lateral raise",
+    "Bar pushdown",
+    "Unilateral pushdown",
+    "Cuffed pushdown",
+    "Shoulder press",
+    "Chest press",
+    "JM press",
+    "Smith JM",
+    "Smith incline",
+    "Skullcrushers",
+    "Pec deck",
+    "Cable fly",
+    "Incline cable fly"
+  ],
+  "Pull": [
+    "Pullups",
+    "Bent-over row",
+    "Pendlay row",
+    "T-bar row",
+    "Low row",
+    "Upper row",
+    "Lat pulldown",
+    "Mag pulldown",
+    "Face pulls",
+    "Reverse pec deck",
+    "Reverse cable fly",
+    "Seated row",
+    "Kelso shrug",
+    "Bar pullover",
+    "Rope pullover",
+    "Lying face pulls",
+    "Preacher curl",
+    "Preacher machine",
+    "Cable curl",
+    "Bayesian curl",
+    "Cable hammer curl",
+    "Dumbbell curl",
+    "Dumbbell hammer curl",
+    "Lying dumbbell curl"
+  ],
+  "Legs": [
+    "SLDL",
+    "Deadlift",
+    "Romanian DL",
+    "Backsquats",
+    "Frontsquats",
+    "Hip thrusts",
+    "Machine hip thrust",
+    "Seated leg curl",
+    "Leg extension",
+    "Lying leg curl",
+    "Machine leg press",
+    "Leg press",
+    "Hacksquat",
+    "Standing calf raises",
+    "Seated calf raises",
+    "Adductors",
+    "Abductors",
+    "Pendulum squat"
+  ],
+  "Övrigt": [
+    "Leg raises",
+    "Cable crunches",
+    "Sit-ups"
+  ]
 };
+
 
 function updateExerciseList() {
   exerciseListElement.innerHTML = "";
