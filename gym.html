@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Träningslogg</title>
+  <link rel="stylesheet" href="gymstyle.css" />
+  <script src="gymscript.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li class="menuCell"><a href="home.html">Home</a></li>
+        <li class="menuCell"><a href="TicTacToe/tictactoe.html">Tic Tac Toe</a></li>
+        <li class="menuCell"><a href="Webbutv/Webbutv.html">Webbutv</a></li>
+        <li class="menuCell"><a href="page3.html">Page 3</a></li>
+        <li class="menuCell"><a href="gym.html" class="active">Gym</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="titleDiv">
+      <h1>Träningslogg</h1>
+    </div>
+
+    <!-- Formulär i tabellformat -->
+    <form id="logForm" autocomplete="off">
+      <table class="form-table">
+        <tr>
+          <td>
+            <input type="text" id="exercise" list="exerciseList" placeholder="Övning" required />
+            <datalist id="exerciseList"></datalist>
+          </td>
+          <td><input type="number" id="weight" placeholder="Vikt" required /></td>
+          <td><input type="number" id="reps" placeholder="Reps" required /></td>
+          <td><input type="number" id="rpe" placeholder="RPE" required /></td>
+          <td><input type="text" id="comments" placeholder="Kommentar" /></td>
+          <td><button type="submit">➕</button></td>
+        </tr>
+      </table>
+    </form>
+
+    <!-- Modal för ny övning -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <p>Övningen "<span id="newExerciseName"></span>" finns inte. Välj kategori:</p>
+        <div class="modal-buttons">
+          <button data-cat="Push">Push</button>
+          <button data-cat="Pull">Pull</button>
+          <button data-cat="Legs">Legs</button>
+          <button data-cat="Övrigt">Övrigt</button>
+          <button id="cancelAdd">Avbryt</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="logList"></div>
+  </main>
+
+</body>
+</html>
